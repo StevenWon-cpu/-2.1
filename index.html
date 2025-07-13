@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파이썬 방탈출</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <button id="admin-button" title="관리자 모드">Admin</button>
+
+        <header>
+            <h1>파이썬 방탈출</h1>
+            <nav id="navigation"></nav>
+        </header>
+
+        <main id="room">
+            <div id="room-background"></div>
+            <div id="clickable-items-container"></div>
+            <div id="boss-trigger-area" class="hidden">
+                <button id="start-boss-battle">최종 보스와 대결하기!</button>
+            </div>
+        </main>
+
+        <footer>
+            <div id="message-box">
+                <p id="message-text">메시지가 여기에 표시됩니다.</p>
+            </div>
+            <div id="inventory">
+                <h2>인벤토리</h2>
+                <ul id="inventory-list"></ul>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 모달 UI -->
+    <div id="puzzle-modal" class="hidden">
+        <div id="puzzle-content">
+            <p id="puzzle-question"></p>
+            <input type="text" id="puzzle-answer" placeholder="정답을 입력하세요">
+            <button id="puzzle-submit">제출</button>
+            <button id="puzzle-close">닫기</button>
+        </div>
+    </div>
+    <div id="boss-battle-modal" class="hidden">
+        <div id="boss-battle-content">
+            <h2>최종 보스전: 시간 안에 퀴즈를 풀어라!</h2>
+            <div class="progress-container">
+                <label for="player-progress">나의 진행도:</label>
+                <progress id="player-progress" value="0" max="10"></progress>
+                <span id="player-progress-text">0/10</span>
+            </div>
+            <div class="progress-container">
+                <label for="boss-progress">보스의 시간:</label>
+                <progress id="boss-progress" value="100" max="100"></progress>
+                <span id="boss-timer-text">60초</span>
+            </div>
+            <div id="boss-puzzle-area">
+                <p id="boss-puzzle-question"></p>
+                <input type="text" id="boss-puzzle-answer" placeholder="정답을 빠르게 입력!">
+                <button id="boss-puzzle-submit">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
